@@ -44,7 +44,7 @@ func WrapString(s string, lim uint) string {
 			}
 			buf.WriteRune(char)
 			current = 0
-		} else if unicode.IsSpace(char) && char != nbsp {
+		} else if unicode.IsSpace(char) && char != nbsp && char != '/' {
 			if spaceBuf.Len() == 0 || wordBuf.Len() > 0 {
 				current += spaceBufLen + wordBufLen
 				spaceBuf.WriteTo(buf)
